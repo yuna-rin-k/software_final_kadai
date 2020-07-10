@@ -4,6 +4,7 @@ public class Student {
 	private String m_name; //name
 	private int m_totalCredit; //total credits gained
 	private Kougi[] m_classes; //classes taken
+	private String[] m_grades; //grades
 
 	//Constrcutor
 	public Student (Kougi [] classes, String name)
@@ -12,8 +13,11 @@ public class Student {
 		int numClass = classes.length;
 		m_totalCredit = 0;
 		m_classes = new Kougi [numClass] ;
-		for(int i=0;i<numClass;i++)
+		m_grades = new String[numClass];
+		for(int i=0;i<numClass;i++) {
 			m_classes[i] = classes[i];
+			m_grades[i] = "undefined";
+		}
 	}
 
 	//calculate the total credits gained
@@ -42,5 +46,21 @@ public class Student {
 	public String getName() {
 
 		return this.m_name;
+	}
+	public void setGrade(String class_name,String grade) {
+		int index = -1;
+		for (int i=0; i<m_classes.length; i++) {
+			if (m_classes[i].toString().equals(class_name)) {
+				index = i;
+				break;
+			}
+		}
+		if (index != -1 && (grade=="A" || grade=="B" || grade=="C" || grade=="D")) {
+		m_grades[index] = grade;
+		}
+	}
+	public void showGrade() {
+		for (int i=0; i<m_grades.length; i++)
+			System.out.println(m_name + "'s " + m_classes[i].toString() + " grade: " + m_grades[i]);
 	}
 }

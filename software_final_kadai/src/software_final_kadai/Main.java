@@ -55,6 +55,9 @@ public class Main {
 		} else {
 			System.out.println(personC.getName()+" cannot take a " + kougi1.getName()+" class.");
 		}
+		
+		personA.setGrade("English","C");
+		personA.setGrade("Math", "A");
+		personA.showGrade();
 	}
-
 }
