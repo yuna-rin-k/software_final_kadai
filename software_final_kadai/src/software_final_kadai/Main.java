@@ -6,14 +6,17 @@ public class Main {
 
 		Kougi[] classes_A = new Kougi[2]; //for Aさん
 		Kougi[] classes_B = new Kougi[2]; //for Bさん
+		Kougi[] classes_C = new Kougi[1];
 
 		classes_A[0] = new Math();
 		classes_A[1] = new English();
 		classes_B[0] = new Math();
 		classes_B[1] = new Programming();
+		classes_C[0] = new English("Mon.", 1);
 
 		Student personA = new Student(classes_A, "A");
 		Student personB = new Student(classes_B, "B");
+		Student personC = new Student(classes_C, "C");
 
 		personA.calcTotalCredits();
 		personB.calcTotalCredits();
@@ -46,6 +49,12 @@ public class Main {
 			}
 		}
 
+		Kougi kougi1 = new Math("Mon.", 1);
+		if (personC.canTake(kougi1)) {
+			System.out.println(personC.getName()+" can take a " + kougi1.getName()+" class.");
+		} else {
+			System.out.println(personC.getName()+" cannot take a " + kougi1.getName()+" class.");
+		}
 	}
 
 }

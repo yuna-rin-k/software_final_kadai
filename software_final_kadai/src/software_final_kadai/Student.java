@@ -3,7 +3,7 @@ package software_final_kadai;
 public class Student {
 	private String m_name; //name
 	private int m_totalCredit; //total credits gained
-	private Kougi [] m_classes; //classes taken
+	private Kougi[] m_classes; //classes taken
 
 	//Constrcutor
 	public Student (Kougi [] classes, String name)
@@ -27,5 +27,20 @@ public class Student {
 	public void showTotalCredits()
 	{
 		System.out.println(this.m_name + "'s total Credit is: "+m_totalCredit);
+	}
+
+
+	public boolean canTake(Kougi kougi) {
+
+		for (Kougi eachKougi : m_classes) {
+			if (kougi.week.equals(eachKougi.week) && kougi.period == eachKougi.period)
+				return false;
+		}
+		return true;
+	}
+
+	public String getName() {
+
+		return this.m_name;
 	}
 }

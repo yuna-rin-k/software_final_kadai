@@ -4,6 +4,8 @@ public abstract class Kougi {
 
 	protected int m_credit;
 	protected String m_name; //for quiz [2]
+	protected String week;
+	protected int period;
 
 	public abstract int getCredit();
 
@@ -16,6 +18,10 @@ public abstract class Kougi {
 		return m_name;
 	}
 
+	public String getName() {
+
+		return this.m_name;
+	}
 	//for quiz [2]
 	public boolean equals(Object o) {
 
