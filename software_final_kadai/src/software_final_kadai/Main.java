@@ -1,13 +1,5 @@
 package software_final_kadai;
 
-import testFinal.English;
-import testFinal.Kougi;
-import testFinal.Math;
-import testFinal.NetworkSystem;
-import testFinal.Programming;
-import testFinal.SoftwareEngineering;
-import testFinal.Student;
-
 public class Main {
 
 	public static void main(String[] args) {
