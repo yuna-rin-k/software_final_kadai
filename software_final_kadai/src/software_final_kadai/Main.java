@@ -59,5 +59,6 @@ public class Main {
 		personA.setGrade("English","C");
 		personA.setGrade("Math", "A");
 		personA.showGrade();
+		personA.showGPA();
 	}
 }
